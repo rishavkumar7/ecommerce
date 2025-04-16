@@ -16,7 +16,7 @@ func SetConfig() (*Config, error) {
 		return nil, err
 	}
 	return &Config{
-		MONGO_URI: viper.GetString("DB_URI"),
+		MONGO_URI: viper.GetString("MONGO_URI"),
 		PORT:      viper.GetString("PORT"),
 	}, nil
 }

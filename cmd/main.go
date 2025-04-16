@@ -4,7 +4,8 @@ import (
 	"log"
 
 	"github.com/rishavkumar7/ecommerce/config"
-	"github.com/rishavkumar7/ecommerce/routes"
+	"github.com/rishavkumar7/ecommerce/internals/apis/http/routes"
+	databases "github.com/rishavkumar7/ecommerce/internals/infrastructure/databases/mongodb"
 )
 
 func main() {
@@ -12,7 +13,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("Error in loading the config: %v", err)
 	}
-	client, err := config.NewDb(cfg)
+	client, err := databases.NewDb(cfg)
 	if err != nil {
 		log.Fatalf("Error in connecting to the database: %v", err)
 	}

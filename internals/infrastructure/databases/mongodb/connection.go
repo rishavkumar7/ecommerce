@@ -1,13 +1,14 @@
-package config
+package databases
 
 import (
 	"context"
 
+	"github.com/rishavkumar7/ecommerce/config"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-func NewDb(cfg *Config) (*mongo.Client, error) {
+func NewDb(cfg *config.Config) (*mongo.Client, error) {
 	mongoUri := cfg.MONGO_URI
 	serverApi := options.ServerAPI(options.ServerAPIVersion1)
 
